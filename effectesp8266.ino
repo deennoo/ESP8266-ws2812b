@@ -4,6 +4,7 @@
 // You should wire a momentary push button to connect from ground to a digital IO pin(use the flash button).  
 // When you press the button it will change to a new pixel animation. Note that you need to press the
 // button once or trigger from webpage to start the first animation!
+// sources :http://www.esp8266.com/viewtopic.php?f=29&t=3470&start=36
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <ESP8266WiFi.h>
 #include <Adafruit_NeoPixel.h>
