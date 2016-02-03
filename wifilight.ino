@@ -11,7 +11,19 @@ RgbColor green = RgbColor(0, colorSaturation, 0);
 RgbColor blue = RgbColor(0, 0, colorSaturation);
 RgbColor white = RgbColor(colorSaturation);
 RgbColor yellow = RgbColor(255, 255, 0);
-RgbColor orange = RgbColor(255, 140, 0);
+RgbColor orange = RgbColor(255, 165, 0);
+RgbColor violet = RgbColor(238, 130, 238);
+RgbColor royalblue = RgbColor(65, 105, 225);
+RgbColor lightskyblue = RgbColor(135, 206, 250);
+RgbColor aqua = RgbColor(0, 255, 255);
+RgbColor aquamarine = RgbColor(127, 255, 212);
+RgbColor seagreen = RgbColor(46, 139, 87);
+RgbColor limegreen = RgbColor(50, 205, 50);
+RgbColor goldenrod = RgbColor(218, 165, 32);
+RgbColor pink = RgbColor(255, 192, 203);
+RgbColor fuchsia = RgbColor(255, 0, 255);
+RgbColor orchid = RgbColor(218, 112, 214);
+RgbColor lavender = RgbColor(230, 230, 250);
 RgbColor black = RgbColor(0);
 
 NeoPixelAnimator animator(&strip); // NeoPixel animation management object
@@ -19,8 +31,8 @@ NeoPixelAnimator animator(&strip); // NeoPixel animation management object
 RgbColor StripRgbColors[pixelCount]; // Holds all colors of the pixels on the strip even if they are off
 bool StripLightIsOn[pixelCount]; // Holds on/off information for all the pixels
 
-const char *ssid = "*******"; //set your ssid here
-const char *password = "********"; // set your ssid key here
+const char *ssid = ""; //put your ssid
+const char *password = ""; // put your key
 
 MDNSResponder mdns;
 ESP8266WebServer server ( 80 );
@@ -36,6 +48,18 @@ void handleRoot() {
   out += "<a href='blue'><span style='display:block; background-color:blue; width:100%; height:6em;'></span></a><br/>";
   out += "<a href='yellow'><span style='display:block; background-color:yellow; width:100%; height:6em;'></span></br>";
   out += "<a href='orange'><span style='display:block; background-color:orange; width:100%; height:6em;'></span></br>";
+  out += "<a href='violet'><span style='display:block; background-color:violet; width:100%; height:6em;'></span></br>";
+  out += "<a href='royalblue'><span style='display:block; background-color:royalblue; width:100%; height:6em;'></span></br>";
+  out += "<a href='lightskyblue'><span style='display:block; background-color:lightskyblue; width:100%; height:6em;'></span></br>";
+  out += "<a href='aqua'><span style='display:block; background-color:aqua; width:100%; height:6em;'></span></br>";
+  out += "<a href='aquamarine'><span style='display:block; background-color:aquamarine; width:100%; height:6em;'></span></br>";
+  out += "<a href='seagreen'><span style='display:block; background-color:seagreen; width:100%; height:6em;'></span></br>";
+  out += "<a href='limegreen'><span style='display:block; background-color:limegreen; width:100%; height:6em;'></span></br>";
+  out += "<a href='goldenrod'><span style='display:block; background-color:goldenrod; width:100%; height:6em;'></span></br>";
+  out += "<a href='pink'><span style='display:block; background-color:pink; width:100%; height:6em;'></span></br>";
+  out += "<a href='fuchsia'><span style='display:block; background-color:fuchsia; width:100%; height:6em;'></span></br>";
+  out += "<a href='orchid'><span style='display:block; background-color:orchid; width:100%; height:6em;'></span></br>";
+  out += "<a href='lavender'><span style='display:block; background-color:lavender; width:100%; height:6em;'></span></br>";
   out += "<a href='black'><span style='display:block; background-color:black; width:100%; height:6em;'></span></a>";
   
   out += "</body>";
@@ -117,6 +141,19 @@ void setup ( void ) {
   server.on ( "/black", []() {setColor(black); handleRoot();} );
   server.on ( "/yellow", []() {setColor(yellow); handleRoot();} );
   server.on ( "/orange", []() {setColor(orange); handleRoot();} );
+  server.on ( "/violet", []() {setColor(violet); handleRoot();} );
+  server.on ( "/royalblue", []() {setColor(royalblue); handleRoot();} );
+  server.on ( "/lightskyblue", []() {setColor(lightskyblue); handleRoot();} );
+  server.on ( "/aqua", []() {setColor(aqua); handleRoot();} );
+  server.on ( "/aquamarine", []() {setColor(aquamarine); handleRoot();} );
+  server.on ( "/seagreen", []() {setColor(seagreen); handleRoot();} );
+  server.on ( "/limegreen", []() {setColor(limegreen); handleRoot();} );
+  server.on ( "/goldenrod", []() {setColor(goldenrod); handleRoot();} );
+  server.on ( "/pink", []() {setColor(pink); handleRoot();} );
+  server.on ( "/fuchsia", []() {setColor(fuchsia); handleRoot();} );
+  server.on ( "/orchid", []() {setColor(orchid); handleRoot();} );
+  server.on ( "/lavender", []() {setColor(lavender); handleRoot();} );
+  
     server.onNotFound ( handleNotFound );
     server.begin();
     Serial.println ( "HTTP server started" );
