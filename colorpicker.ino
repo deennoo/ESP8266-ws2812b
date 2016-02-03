@@ -1,3 +1,4 @@
+//sources : http://www.esp8266.com/viewtopic.php?f=29&t=3470&start=36
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
 #include <ESP8266WebServer.h>
