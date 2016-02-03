@@ -6,7 +6,7 @@ This sketch goal is :
 
 Drive a WS2812B led strip true an ESP8266 chip
 
-Actually work on a wemos mini d1
+Actually work on a wemos mini d1, creat a html server who can change led strip color 
 
 Base on works of : 
 
