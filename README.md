@@ -13,6 +13,7 @@ to acces  : http://ip shown on ide serial monitor
 Base on works of : 
 
 https://github.com/sticilface/Esp8266-Hue
+and
 http://pance.mk/index.php/wifi-light-with-esp8266-and-arduino-code/
 
 Compile with : 
