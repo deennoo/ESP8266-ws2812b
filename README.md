@@ -4,9 +4,11 @@ Driving ws2812b led strip true ESP8266
 
 This sketch goal is : 
 
-Drive a WS2812B led strip true an ESP8266 chip
+Drive a WS2812B led strip true an ESP8266 chip and make it compatible with Milight protocole
 
-Actually work on a wemos mini d1, creat a html server who can change led strip color 
+Actually work on a wemos mini d1, and 15 pixel led strip
+
+This creat a html server who can change led strip color 
 
 to acces  : http://ip shown on ide serial monitor
 
