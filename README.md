@@ -6,6 +6,12 @@ This sketch goal is :
 
 Drive a WS2812B led strip true an ESP8266 chip and make it compatible with Milight protocole
 
+Actually work on a wemos mini d1, and 15 pixels led strip
+
+This creat a html server who can change led strip color 
+
+to acces  : http://ip shown on ide serial monitor
+
 Actually : 
 
 - 18 colors display
@@ -20,11 +26,6 @@ TODO :
 - get a config web page for : wifi / pixel number / data pin / turnoff esp led
 - add Milight compatibility (act as a bridge and a bulb)
 
-Actually work on a wemos mini d1, and 15 pixels led strip
-
-This creat a html server who can change led strip color 
-
-to acces  : http://ip shown on ide serial monitor
 
 Base on works of : 
 
