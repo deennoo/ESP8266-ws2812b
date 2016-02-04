@@ -38,7 +38,7 @@ void setup() {
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
 //***************WIFI ACCESS POINT******************//
-/*  WiFi.mode(WIFI_AP);
+  WiFi.mode(WIFI_AP);
   WiFi.softAPConfig(apIP,apIP,netMsk);
   WiFi.softAP(ssid);//,password);  //leave password away for open AP
   Serial.print("SSID: ");
