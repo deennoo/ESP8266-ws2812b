@@ -1,5 +1,5 @@
 wifi.setmode(wifi.STATION)
-wifi.sta.config("MELICO_MOGER", "1986434690")
+wifi.sta.config("ssid", "password")
 
 dofile('telnet.lua')
 
