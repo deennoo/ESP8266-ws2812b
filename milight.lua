@@ -1,4 +1,15 @@
-PIN_WS2812 = 1
+BRIGHT     = 0.1
+ON         = BRIGHT * 255
+
+LED_PIN    = 4       -- GPIO2
+PIXELS     = 15     -- your pixel number
+
+
+RED   = string.char( 0, ON,  0)
+GREEN = string.char(ON,  0,  0)
+BLUE  = string.char( 0,  0, ON)
+WHITE = string.char(ON, ON, ON)
+BLACK = string.char( 0,  0,  0)
 
 current_hue = 0
 current_sat = 1
@@ -68,12 +79,13 @@ function admin(s, c)
         if current_sat < 0 then current_sat = 0 end
     -- turn lights off
     elseif cmd==33 then
-    leds_rgb = string.char(0,0,0, 0,0,0, 0,0,0)
-        ws2812.writergb(PIN_WS2812, leds_rgb)
+    elseif cmd==34 then
+        leds_grb = string.char(0,0,0)
+        ws2812.write(LED_PIN, leds_grb:rep(PIXELS)) 
     -- turn lights on
     elseif cmd==34 then
-    leds_rgb = string.char(255,255,255,255,255,255,255,255,255)
-        ws2812.writergb(PIN_WS2812, leds_rgb)
+        leds_grb = string.char(255,255,255)
+        ws2812.write(LED_PIN, leds_grb:rep(PIXELS)) ---rep allow to set all pixel to the same value
     end
 
     
