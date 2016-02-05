@@ -79,7 +79,6 @@ function admin(s, c)
         if current_sat < 0 then current_sat = 0 end
     -- turn lights off
     elseif cmd==33 then
-    elseif cmd==34 then
         leds_grb = string.char(0,0,0)
         ws2812.write(LED_PIN, leds_grb:rep(PIXELS)) 
     -- turn lights on
