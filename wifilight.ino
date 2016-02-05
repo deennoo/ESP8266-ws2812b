@@ -3,9 +3,10 @@
 #include <ESP8266WebServer.h>
 #include <ESP8266mDNS.h>
 #include <NeoPixelBus.h>
-#define pixelCount 15
+#define pixelCount 15 // your pixel number
+#define pixelPin 2 // pixel pin
 #define colorSaturation 255
-NeoPixelBus strip = NeoPixelBus(pixelCount, 2, NEO_GRB);
+NeoPixelBus strip = NeoPixelBus(pixelCount, pixelPin, NEO_GRB);
 RgbColor red = RgbColor(colorSaturation, 0, 0);
 RgbColor green = RgbColor(0, colorSaturation, 0);
 RgbColor blue = RgbColor(0, 0, colorSaturation);
