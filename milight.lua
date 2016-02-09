@@ -2,7 +2,7 @@ BRIGHT     = 0.1
 ON         = BRIGHT * 255
 
 LED_PIN    = 4       -- GPIO2
-PIXELS     = 15     -- your pixel number
+PIXELS     = 15      -- pixels number on led strip
 
 
 RED   = string.char( 0, ON,  0)
@@ -10,6 +10,7 @@ GREEN = string.char(ON,  0,  0)
 BLUE  = string.char( 0,  0, ON)
 WHITE = string.char(ON, ON, ON)
 BLACK = string.char( 0,  0,  0)
+
 
 current_hue = 0
 current_sat = 1
@@ -79,15 +80,22 @@ function admin(s, c)
         if current_sat < 0 then current_sat = 0 end
     -- turn lights off
     elseif cmd==33 then
-        leds_grb = string.char(0,0,0)
+        leds_grb = BLACK
         ws2812.write(LED_PIN, leds_grb:rep(PIXELS)) 
+        
     -- turn lights on
     elseif cmd==34 then
-        leds_grb = string.char(255,255,255)
-        ws2812.write(LED_PIN, leds_grb:rep(PIXELS)) ---rep allow to set all pixel to the same value
+        leds_grb = WHITE
+        ws2812.write(LED_PIN, leds_grb:rep(PIXELS)) 
     end
 
-    
+    if act then
+        r, g, b = hslToRgb(current_hue, current_sat, current_lum)
+        leds_grb = string.char(g,r,b)
+        ws2812.write(LED_PIN, leds_grb:rep(PIXELS))
+                
+        
+    end
    
 end
 
@@ -95,4 +103,3 @@ s=net.createServer(net.UDP)
 s:on("receive", admin)
 s:listen(8899)
 print("Server ready")
-
