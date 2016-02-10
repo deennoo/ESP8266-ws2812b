@@ -97,9 +97,12 @@ function admin(s, c)
       --  pwm.setduty(g_pin, g) -- from original code
         --pwm.setduty(b_pin, b) -- from original code
     if act then
-        -- r, g, b = hslToRgb(current_hue, current_sat, current_lum)
-        -- leds_grb = string.char(g,r,b)
-        -- ws2812.write(LED_PIN, leds_grb:rep(PIXELS))
+        r, g, b = hslToRgb(current_hue, current_sat, current_lum)
+        leds_grb = string.char(g,r,b)
+        ws2812.write(LED_PIN, leds_grb:rep(PIXELS))
+          -- return error : PANIC: unprotected error in call to Lua API (milight.lua:102: bad argument #1 to 'char' (invalid value))
+                          --PANIC: unprotected error in call to Lua API (bad argument #2 (number expected, got no value))
+                          --PANIC: unprotected error in call to Lua API (bad argument #3 (number expected, got no value))
                 
         
     end
