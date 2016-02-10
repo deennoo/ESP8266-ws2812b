@@ -42,7 +42,7 @@ function hslToRgb(h, s, l)
     b = hue2rgb(p, q, h - 1/3)
   end
 
-  return math.floor(r * 255 + 0.5), math.floor(g * 255 + 0.5), math.floor(b * 255 + 0.5)
+  return math.floor(r * 255 + 0.5), math.floor(g * 255 + 0.5), math.floor(b * 255 + 0.5) --https://github.com/frizzby/esp8266-rgb-led/issues/3#issuecomment-182328536
 end
 
 
