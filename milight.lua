@@ -89,6 +89,13 @@ function admin(s, c)
         ws2812.write(LED_PIN, leds_grb:rep(PIXELS)) 
     end
 -- attempt to set color to pixel don't work for now
+
+-- if act then
+   --     r, g, b = hslToRgb(current_hue, current_sat, current_lum) -- from original code
+                
+     --   pwm.setduty(r_pin, r) -- from original code
+      --  pwm.setduty(g_pin, g) -- from original code
+        --pwm.setduty(b_pin, b) -- from original code
     if act then
         -- r, g, b = hslToRgb(current_hue, current_sat, current_lum)
         -- leds_grb = string.char(g,r,b)
